@@ -37,7 +37,15 @@ $(function() {
       return min + Math.random()*(max-min);
   }
 
-  for(var i=0;i<300;i++) {
-    new flower();
+  function boom(num) {
+    for(var i=0;i<num;i++) {
+      new flower();
+    }
+  }
+
+  if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    boom(50);
+  } else {
+    boom(300);
   }
 })
